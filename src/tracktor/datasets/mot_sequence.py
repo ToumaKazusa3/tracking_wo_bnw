@@ -101,8 +101,8 @@ class MOTSequence(Dataset):
                         x1 = int(row[2]) - 1
                         y1 = int(row[3]) - 1
                         # This -1 accounts for the width (width of 1 x1=x2)
-                        x2 = x1 + int(row[4]) - 1
-                        y2 = y1 + int(row[5]) - 1
+                        x2 = x1 + int(float(row[4])) - 1
+                        y2 = y1 + int(float(row[5])) - 1
                         bb = np.array([x1, y1, x2, y2], dtype=np.float32)
                         boxes[int(row[0])][int(row[1])] = bb
                         visibility[int(row[0])][int(row[1])] = 1

@@ -20,7 +20,7 @@ class MOTreIDWrapper(Dataset):
         train_mot17_sequences = ['MOT17-02', 'MOT17-04', 'MOT17-05', 'MOT17-09',
                                  'MOT17-10', 'MOT17-11', 'MOT17-13']
         train_mot20_sequences = ['MOT20-01', 'MOT20-02', 'MOT20-03', 'MOT20-05']
-        train_debug_sequences = ['MOT17-02']
+        train_debug_sequences = ['KITTI-13']
 
         if split == "train_mot15":
             sequences = train_mot15_sequences
