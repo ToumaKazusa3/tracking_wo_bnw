@@ -62,7 +62,10 @@ class MOTreID(MOTSequence):
             if i != idx], self.P-1, replace=False)
         for i in neg_indices:
             neg = self.data[i]
-            res.append(neg[np.random.choice(neg.shape[0], self.K, replace=False)])
+            if neg.shape[0] < self.K:
+                res.append(neg[np.random.choice(neg.shape[0], self.K, replace=True)])
+            else:
+                res.append(neg[np.random.choice(neg.shape[0], self.K, replace=False)])
 
         # concatenate the results
         r = []
