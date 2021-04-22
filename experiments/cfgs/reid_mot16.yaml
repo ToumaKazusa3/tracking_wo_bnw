@@ -7,8 +7,8 @@ db_train:
   split: mot_reid_train_mot16
   mot_dir: MOT16
 db_val:
-  split: mot_reid_train_debug
-  mot_dir: MOT17Det
+  split: mot_reid_train_mot16
+  mot_dir: MOT16
 
 model_args:
   # Recommended for loss: batch_all, batch_hard
