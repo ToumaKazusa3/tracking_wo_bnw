@@ -4,8 +4,8 @@ desription:
 seed: 12345
 # smth like MOT_train, KITTI_train_Pedestrian
 db_train:
-  split: mot_reid_train_mot20
-  mot_dir: MOT20
+  split: mot_reid_train_mot17
+  mot_dir: MOT17Det
 db_val:
   split: mot_reid_train_debug
   mot_dir: MOT17Det
