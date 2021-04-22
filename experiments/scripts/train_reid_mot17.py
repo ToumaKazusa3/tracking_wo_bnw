@@ -13,7 +13,7 @@ from tracktor.reid.resnet import ReIDNetwork_resnet50
 from tracktor.reid.solver import Solver
 
 ex = sacred.Experiment()
-ex.add_config('experiments/cfgs/reid.yaml')
+ex.add_config('experiments/cfgs/reid_mot17.yaml')
 
 
 @ex.config
