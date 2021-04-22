@@ -68,7 +68,7 @@ def main(seed, module_name, name, db_train, db_val, solver_cfg,
     db_train = Datasets(db_train['split'], dataset_kwargs)
     db_train = DataLoader(db_train, batch_size=1, shuffle=True)
 
-    if db_val is not None:
+    if db_val['split'] != 'None':
         _log.info("[*] Val:")
 
         dataset_kwargs['mot_dir'] = db_val['mot_dir']
