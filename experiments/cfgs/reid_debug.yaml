@@ -32,6 +32,7 @@ dataset_kwargs:
   # a sequence with maximal [truncation, occlusion] levels
   vis_threshold: 0.3
   P: 18
+#  P: 4
   K: 4
   # limit maximum number of images per identity
   max_per_person: 1000
