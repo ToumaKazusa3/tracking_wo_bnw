@@ -53,7 +53,7 @@ def main(seed, module_name, name, db_train, db_val, solver_cfg,
     network = ReIDNetwork_resnet50(
         pretrained=True, **model_args)
     network.train()
-    network.cuda()
+    network = torch.nn.DataParallel(network).cuda()
 
     #########################
     # Initialize dataloader #
