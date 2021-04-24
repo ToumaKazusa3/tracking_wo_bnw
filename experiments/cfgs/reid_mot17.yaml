@@ -1,5 +1,5 @@
 name: test
-module_name: reid
+module_name: reid_mot17
 desription:
 seed: 12345
 # smth like MOT_train, KITTI_train_Pedestrian
