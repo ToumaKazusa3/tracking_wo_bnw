@@ -250,6 +250,7 @@ class ReIDNetwork(ResNet):
         losses = {}
 
         if self.prec_at_k:
+            # 计算anchor的前prec_at_k个样本是否是正样本
             # compute pariwise square distance matrix, not stable with sqr as 0 can happen
             n = embeddings.size(0)
             m = embeddings.size(0)
@@ -264,7 +265,9 @@ class ReIDNetwork(ResNet):
             num_hit = 0.0
             num_ges = 0.0
             for i in range(dist.size(0)):
+                # d是anchor正样本的索引
                 d = mask_anchor_positive[i].nonzero().view(-1, 1)
+                # ind是anchor通过相似度排序得到的前4个最相似的样本（包括anchor自己）
                 ind = indices[i][:self.prec_at_k + 1]
 
                 same = d == ind

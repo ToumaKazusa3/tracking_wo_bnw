@@ -14,7 +14,7 @@ from tracktor.reid.solver import Solver
 
 ex = sacred.Experiment()
 ex.add_config('experiments/cfgs/reid.yaml')
-
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2,3,4,5,6,7,8'
 
 @ex.config
 def add_dataset_to_model(model_args, dataset_kwargs):
