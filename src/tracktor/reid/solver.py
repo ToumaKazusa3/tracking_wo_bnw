@@ -102,7 +102,7 @@ class Solver(object):
 
             for i, batch in enumerate(train_loader, 1):
                 optim.zero_grad()
-                losses = model.sum_losses(batch)
+                losses = model.module.sum_losses(batch)
                 losses['total_loss'].backward()
                 optim.step()
 
@@ -139,7 +139,7 @@ class Solver(object):
                 model.eval()
                 val_losses = {}
                 for i, batch in enumerate(val_loader):
-                    losses = model.sum_losses(batch)
+                    losses = model.module.sum_losses(batch)
 
                     for k, v in losses.items():
                         if k not in val_losses.keys():
